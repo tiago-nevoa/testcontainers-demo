@@ -1,11 +1,18 @@
 version: '3.1'
 
 services:
-
-  db:
+  db1:
     image: mysql:latest
     environment:
-      MYSQL_ROOT_PASSWORD: letsgomarco
+      MYSQL_ROOT_PASSWORD: password
       MYSQL_DATABASE: somedatabase
     ports:
       - 3306:3306
+
+  db2:
+    image: cassandra:latest
+    environment:
+      CASSANDRA_ROOT_PASSWORD: password
+      CASSANDRA_DATABASE: somedatabase
+    ports:
+      - 9042:9042

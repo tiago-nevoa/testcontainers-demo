@@ -24,26 +24,8 @@ public class CustomerIntegrationTests extends AbstractTest {
     @Autowired
     private CustomerDao customerDao;
 
-//    @Container
-//    private static CassandraContainer cassandraContainer = new CassandraContainer("cassandra:latest");
-
-//    @DynamicPropertySource
-//    static void overrideProps(DynamicPropertyRegistry registry) {
-//        registry.add("spring.datasource.url", cassandraContainer::getContainerName);
-//        registry.add("spring.datasource.username", cassandraContainer::getUsername);
-//        registry.add("spring.datasource.password", cassandraContainer::getPassword);
-//    }
-
     @Test
-    void when_using_a_clean_db_this_should_be_empty() throws IOException, InterruptedException {
-//        mySQLContainer.withClasspathResourceMapping("application.properties", "/tmp/application.properties", BindMode.READ_ONLY);
-//        mySQLContainer.withFileSystemBind("C:\\dev\\application.properties", "/tmp/bla.txt", BindMode.READ_ONLY);
-//
-//        mySQLContainer.execInContainer("ls", "-la");
-//
-//        mySQLContainer.getLogs(OutputFrame.OutputType.STDOUT);
-//
-//        Integer onYourMachine = mySQLContainer.getMappedPort(3306);
+    void when_using_a_clean_db_this_should_be_empty() {
 
         List<Customer> customers = customerDao.findAll();
         assertThat(customers).hasSize(2);
